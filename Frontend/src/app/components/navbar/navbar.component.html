@@ -1,0 +1,67 @@
+<mat-toolbar color="accent">
+  <a
+    routerLink="/"
+    mat-icon-button
+    class="example-icon"
+    aria-label="Example icon-button with menu icon"
+  >
+    <mat-icon>menu_book</mat-icon>
+  </a>
+  <span>Examportal</span>
+  <span class="example-spacer"></span>
+
+  <!-- Link to Login page -->
+  <a
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/login'"
+    mat-icon-button
+    class="example-icon favorite-icon"
+    aria-label="Login"
+  >
+    Login
+  </a>
+
+  <!-- Link to Register page -->
+  <a
+    *ngIf="!isLoggedIn"
+    [routerLink]="'/signup'"
+    mat-icon-button
+    class="example-icon favorite-icon mr20 ml20"
+    aria-label="Register"
+  >
+    Register
+  </a>
+
+  <!-- Link to Logout -->
+  <a
+    (click)="logout()"
+    *ngIf="isLoggedIn"
+    mat-icon-button
+    class="example-icon favorite-icon mr20 ml20"
+    aria-label="Logout"
+  >
+    Logout
+  </a>
+
+  <!-- Link to Admin Profile -->
+  <button
+    *ngIf="isLoggedIn && user"
+    class="example-icon favorite-icon ml20"
+    mat-button
+    routerLink="/admin/profile"
+    aria-label="Admin Profile"
+  >
+    {{ user.username }}
+  </button>
+
+  <!-- Link to Upcoming Exams -->
+  <a
+    *ngIf="isLoggedIn"
+    [routerLink]="'/upcoming-exams'"
+    mat-icon-button
+    class="example-icon favorite-icon mr20 ml20"
+    aria-label="Upcoming Exams"
+  >
+    Upcoming Exams
+  </a>
+</mat-toolbar>

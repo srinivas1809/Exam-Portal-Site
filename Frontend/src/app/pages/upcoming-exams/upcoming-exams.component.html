@@ -1,0 +1,13 @@
+<div class="upcoming-exams-container">
+    <h2>Upcoming Exams</h2>
+  
+    <!-- Flexbox container for centering cards -->
+    <div class="exam-cards-container">
+      <div *ngFor="let exam of upcomingExams" class="exam-card">
+        <h3>{{ exam.name }}</h3>
+        <p><strong>Date:</strong> {{ exam.date }}</p>
+        <p><strong>Subject:</strong> {{ exam.subject }}</p>
+      </div>
+    </div>
+  </div>
+  
